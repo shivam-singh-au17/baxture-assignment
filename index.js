@@ -14,6 +14,9 @@ app.use('/', (req, res) => {
     res.send('Welcome to the Baxture - NodeJS Backend Assignment');
 });
 
+// Error handling middleware
+app.use(require('./middleware/errorHandlerMiddleware'));
+
 // Get port from environment
 const port = process.env.PORT || 8080;
 if (!port) throw new Error("PORT is not defined in the environment variables.");
