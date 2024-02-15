@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const textFileSchema = new mongoose.Schema(
     {
-        fileId: { type: String },
-        fileName: { type: String },
+        fileId: { type: String, required: true },
+        fileName: { type: String, required: true },
         uploadDate: { type: Date, default: Date.now },
     },
     {

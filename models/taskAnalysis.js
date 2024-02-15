@@ -2,10 +2,11 @@ const mongoose = require('mongoose');
 
 const taskAnalysisSchema = new mongoose.Schema(
     {
-        taskId: { type: String },
-        fileId: { type: String },
-        operation: { type: String },
+        taskId: { type: String, required: true },
+        fileId: { type: String, required: true },
+        operation: { type: String, required: true },
         options: { type: Object },
+        result: { type: Object, required: true },
     },
     {
         timestamps: true,
