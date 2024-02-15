@@ -31,3 +31,30 @@ exports.analyzeTask = async (req, res) => {
         );
     }
 };
+
+exports.getAnalyzedTask = async (req, res) => {
+
+    const taskId = req.query.taskId;
+
+    try {
+
+        const taskResult = await taskAnalysisService.getAnalyzedTask(taskId);
+
+        return handleResponse(
+            res,
+            OK,
+            SUCCESS,
+            "Successfully received task analysis result",
+            taskResult
+        );
+
+    } catch (err) {
+
+        return handleError(
+            res,
+            INTERNAL_SERVER_ERROR,
+            FAIL,
+            `Error while getting task analysis results, ${err}`
+        );
+    }
+};

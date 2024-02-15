@@ -4,6 +4,14 @@ const path = require('path');
 const { TaskAnalysis, TextFile } = require('../models');
 const { COUNT_WORDS, COUNT_UNIQUE_WORDS, FIND_TOP_K_WORDS } = require('../utils/operationNames');
 
+/**
+ * Function to analyze a task based on the specified operation and options, and save the analysis results to the database.
+ * 
+ * @param {string} fileId ID of the file to be analyzed
+ * @param {object} payload Object containing operation and options for the analysis
+ * @returns {Promise<object>} Promise that resolves to the saved task analysis details in the database
+ * @throws Will throw an error if the file does not exist, resulting in an error message
+ */
 exports.analyzeTask = async (fileId, payload) => {
 
     const { operation, options } = payload;
@@ -52,4 +60,19 @@ exports.analyzeTask = async (fileId, payload) => {
     const newTaskAnalysis = new TaskAnalysis({ taskId, fileId, operation, options, result });
 
     return await newTaskAnalysis.save();
+};
+
+/**
+ * Function to retrieve analyzed task results from the database based on the provided taskId.
+ * 
+ * @param {string} taskId ID of the task analysis to retrieve
+ * @returns {Promise<object>} Promise that resolves to the task analysis details from the database
+ * @throws Will throw an error if the task analysis results do not exist, resulting in an error message
+ */
+exports.getAnalyzedTask = async (taskId) => {
+
+    const taskResult =  await TaskAnalysis.findOne({ taskId });
+    if (!taskResult) throw new Error(`Task analysis results does not exist for taskId ${taskId}`);
+
+    return taskResult;
 };

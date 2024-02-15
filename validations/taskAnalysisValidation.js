@@ -10,4 +10,8 @@ module.exports = {
     analyzeTaskQuery: Joi.object({
         fileId: Joi.string().required(),
     }),
+
+    getAnalyzedTask: Joi.object({
+        taskId: Joi.string().required(),
+    }),
 };

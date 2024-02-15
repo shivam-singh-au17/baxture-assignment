@@ -4,7 +4,7 @@ const taskAnalysisRoutes = require('./taskAnalysisRoutes');
 
 const router = express.Router();
 
-router.use('/', textFileRoutes);
-router.use('/', taskAnalysisRoutes);
+router.use('/text-file', textFileRoutes);
+router.use('/task-analysis', taskAnalysisRoutes);
 
 module.exports = router;
