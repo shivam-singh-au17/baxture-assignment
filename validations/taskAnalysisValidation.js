@@ -4,7 +4,9 @@ const { COUNT_WORDS, COUNT_UNIQUE_WORDS, FIND_TOP_K_WORDS } = require('../utils/
 module.exports = {
     analyzeTask: Joi.object({
         operation: Joi.string().valid(COUNT_WORDS, COUNT_UNIQUE_WORDS, FIND_TOP_K_WORDS).required(),
-        options: Joi.number().optional(),
+        options: Joi.object({
+            topWords: Joi.number().optional(),
+        }).optional()
     }),
 
     analyzeTaskQuery: Joi.object({
