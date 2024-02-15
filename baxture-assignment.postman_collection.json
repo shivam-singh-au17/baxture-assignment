@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "557efc45-b7c7-498d-b05d-8b5fb4d78e27",
+		"name": "baxture-assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25164413"
+	},
+	"item": [
+		{
+			"name": "Text File",
+			"item": [
+				{
+					"name": "text-file/upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/shiva/Downloads/file05.txt"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/text-file/upload",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"text-file",
+								"upload"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "text-file/upload",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/shiva/Downloads/file05.txt"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/text-file/upload",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"text-file",
+										"upload"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "111"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6f-SRWblMXayCq5PtGJcI5Egzz+CoI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Feb 2024 08:01:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"File uploaded successfully\",\n    \"data\": {\n        \"fileId\": \"feda255d-8de0-4a74-ac5e-56af878c6db8\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Task Analysis",
+			"item": [
+				{
+					"name": "task-analysis",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"FIND_TOP_K_WORDS\",\r\n    \"options\": {\r\n        \"topWords\" : 15 \r\n    }\r\n}\r\n// operation: must be one of [COUNT_WORDS, COUNT_UNIQUE_WORDS, FIND_TOP_K_WORDS]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/task-analysis/?fileId=61d7cd2a-2b20-443b-b1b2-91e2568746c4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task-analysis",
+								""
+							],
+							"query": [
+								{
+									"key": "fileId",
+									"value": "349698c3-1232-426e-86d6-e74468d59ff0",
+									"disabled": true
+								},
+								{
+									"key": "fileId",
+									"value": "c769d806-e3b8-41e4-8b85-2bdf1afd9587",
+									"disabled": true
+								},
+								{
+									"key": "fileId",
+									"value": "61d7cd2a-2b20-443b-b1b2-91e2568746c4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "task-analysis/:taskId",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"operation\": \"FIND_TOP_K_WORDS\",\r\n    \"options\": {\r\n        \"topWords\" : 15 \r\n    }\r\n}\r\n// operation: must be one of [COUNT_WORDS, COUNT_UNIQUE_WORDS, FIND_TOP_K_WORDS]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/task-analysis/?fileId=61d7cd2a-2b20-443b-b1b2-91e2568746c4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"task-analysis",
+										""
+									],
+									"query": [
+										{
+											"key": "fileId",
+											"value": "349698c3-1232-426e-86d6-e74468d59ff0",
+											"disabled": true
+										},
+										{
+											"key": "fileId",
+											"value": "c769d806-e3b8-41e4-8b85-2bdf1afd9587",
+											"disabled": true
+										},
+										{
+											"key": "fileId",
+											"value": "61d7cd2a-2b20-443b-b1b2-91e2568746c4"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "111"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6f-qyFPcuORQfuFni6OLmjv53TmFmE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Feb 2024 09:31:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Task analyzed successfully\",\n    \"data\": {\n        \"taskId\": \"97fa4dca-aadf-4f13-88f4-31e0d0bb171b\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "task-analysis/result",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/task-analysis/result?taskId=7536bbd8-fe52-4a93-8978-cf16079510d5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task-analysis",
+								"result"
+							],
+							"query": [
+								{
+									"key": "taskId",
+									"value": "7536bbd8-fe52-4a93-8978-cf16079510d5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "task-analysis/result",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/task-analysis/result?taskId=7536bbd8-fe52-4a93-8978-cf16079510d5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"task-analysis",
+										"result"
+									],
+									"query": [
+										{
+											"key": "taskId",
+											"value": "7536bbd8-fe52-4a93-8978-cf16079510d5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "430"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ae-mcv/ZJU7igQ3pJncw0YumRA1RKo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 15 Feb 2024 08:05:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Successfully received task analysis result\",\n    \"data\": {\n        \"_id\": \"65cdc4ea1f1e3b03021f7198\",\n        \"taskId\": \"7536bbd8-fe52-4a93-8978-cf16079510d5\",\n        \"fileId\": \"61d7cd2a-2b20-443b-b1b2-91e2568746c4\",\n        \"operation\": \"FIND_TOP_K_WORDS\",\n        \"options\": 10,\n        \"result\": {\n            \"topWords\": [\n                \"-\",\n                \"a\",\n                \"and\",\n                \"should\",\n                \"be\",\n                \"the\",\n                \"with\",\n                \"database\",\n                \"include\",\n                \"for\"\n            ]\n        },\n        \"createdAt\": \"2024-02-15T08:01:46.802Z\",\n        \"updatedAt\": \"2024-02-15T08:01:46.802Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
