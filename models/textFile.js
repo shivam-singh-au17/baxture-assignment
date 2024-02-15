@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const textFileSchema = new mongoose.Schema(
     {
         fileId: { type: String },
-        filename: { type: String },
+        fileName: { type: String },
         uploadDate: { type: Date, default: Date.now },
     },
     {

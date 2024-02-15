@@ -2,12 +2,16 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const { connect } = require("./config/dbConnection");
+const routes = require('./routes');
 
 // Server Configurations
 const app = express();
 
 // parse application/json
 app.use(bodyParser.json());
+
+// Routes
+app.use('/api', routes);
 
 // Welcome route
 app.use('/', (req, res) => {
